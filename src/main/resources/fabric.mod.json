@@ -1,0 +1,50 @@
+{
+	"schemaVersion": 1,
+	"id": "intellium",
+	"version": "1.0.0",
+	"name": "Intellium",
+	"description": "Intel GPU optimization and stability mod for Minecraft.",
+	"authors": [
+		"Alfix"
+	],
+	"contact": {
+		"homepage": "https://github/Alfix-Januarivinter",
+		"sources": "https://github.com/Alfix-Januarivinter/Intellium"
+	},
+	"license": "CC-BY-SA-4.0",
+	"icon": "assets/intellium/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.alfixjanuarivinter.intellium.Intellium"
+		],
+		"client": [
+			"com.github.alfixjanuarivinter.intellium.IntelliumClient"
+		],
+		"fabric-datagen": [
+			"com.github.alfixjanuarivinter.intellium.IntelliumDataGenerator"
+		]
+	},
+	"mixins": [
+		"intellium.mixins.json",
+		{
+			"config": "intellium.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*",
+		"modmenu": "*",
+		"cloth-config2": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	},
+	"client": [
+		"com.yourname.intellium.IntelliumClient",
+		"com.yourname.intellium.config.IntelliumModMenu"
+	]
+}
