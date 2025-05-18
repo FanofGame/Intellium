@@ -12,4 +12,6 @@ Intellium is an Intel optimization mod for Fabric Minecraft modloader.
 - Requires Fabric Loader 0.16.14 and Fabric API 0.124.0+.
 
 ## License
-MIT License. See LICENSE file for details.
+
+This project is licensed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) License.
+
