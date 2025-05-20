@@ -2,6 +2,8 @@
 
 Intellium is an Intel optimization mod for Fabric Minecraft modloader.
 
+Exist on Modrinth link: https://modrinth.com/mod/intellium
+
 ## Features
 - Improves performance on Intel CPUs
 - Fabric 1.21.5 compatible
