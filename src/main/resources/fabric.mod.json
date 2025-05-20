@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "intellium",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"name": "Intellium",
 	"description": "Intel GPU optimization and stability mod for Minecraft.",
 	"authors": [
@@ -9,8 +9,9 @@
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/intellium",
+		"modrinth": "https://modrinth.com/mod/intellium",
 		"sources": "https://github.com/Alfix-Januarivinter/Intellium",
-		"issues": "https://github.com/alfixjanuarivinter/intellium/issues"
+		"issues": "https://github.com/Alfix-Januarivinter/Intellium/issues"
 	},
 	"license": "CC-BY-SA-4.0",
 	"icon": "assets/intellium/icon.png",
@@ -50,6 +51,11 @@
 		"modmenu:api": true,
 		"modupdater": {
 			"modrinth": "intellium"
+		},
+		"modmenu": {
+			"links": {
+				"Modrinth Page": "https://modrinth.com/mod/intellium"
+			}
 		}
 	}
 }
