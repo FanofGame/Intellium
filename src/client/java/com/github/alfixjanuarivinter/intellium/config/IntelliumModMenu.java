@@ -5,9 +5,10 @@ import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import net.minecraft.text.Text;
-import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.text.Text;
 
 @Environment(EnvType.CLIENT)
 public class IntelliumModMenu implements ModMenuApi {
@@ -15,29 +16,30 @@ public class IntelliumModMenu implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> {
-            // Create the config screen builder
+            IntelliumConfig config = IntelliumConfig.getInstance();
             ConfigBuilder builder = ConfigBuilder.create()
-                    .setTitle(Text.literal("Intellium Config"));
+                    .setParentScreen(parent)
+                    .setTitle(Text.literal("Intellium Config"))
+                    .setSavingRunnable(config::save);
 
-            // Create the category
             ConfigCategory general = builder.getOrCreateCategory(Text.literal("General"));
-
-            // Entry builder for config entries
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-            // Example boolean toggle for enabling Intel optimizations
-            general.addEntry(entryBuilder.startBooleanToggle(
-                    Text.literal("Enable Intel Optimizations"),
-                    IntelliumConfig.getInstance().enableIntelOptimizations
-            ).setSaveConsumer(newValue -> {
-                IntelliumConfig.getInstance().enableIntelOptimizations = newValue;
-                IntelliumConfig.getInstance().save();
-            }).build());
+            general.addEntry(entryBuilder.startBooleanToggle(Text.literal("Enable Intel Optimizations"), config.enableIntelOptimizations)
+                    .setSaveConsumer(val -> config.enableIntelOptimizations = val)
+                    .build());
 
-            // Add more config entries here as needed
-            // e.g. slider, enum selectors, etc.
+            general.addEntry(entryBuilder.startIntSlider(Text.literal("View Distance"), config.viewDistance, 2, 16)
+                    .setSaveConsumer(val -> config.viewDistance = val)
+                    .build());
 
+            general.addEntry(entryBuilder.startTextField(Text.literal("Particle Setting (minimal / decreased / all)"), config.particleSetting)
+                    .setSaveConsumer(val -> config.particleSetting = val.toLowerCase())
+                    .build());
+
+            builder.setTransparentBackground(true);
             return builder.build();
         };
     }
+
 }
