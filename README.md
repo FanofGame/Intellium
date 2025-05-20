@@ -1,4 +1,4 @@
-# Intellium
+# Intellium Refabricated
 
 Intellium is an Intel optimization mod for Fabric Minecraft modloader.
 
