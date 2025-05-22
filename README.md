@@ -6,7 +6,7 @@ Exist on Modrinth link: https://modrinth.com/mod/intellium
 
 ## Features
 - Improves performance on Intel CPUs
-- Fabric 1.21.5, 1.21.1, 1.20.4 compatible
+- Fabric 1.21.5, 1.21.1, 1.20.4, 1.20.1 compatible
 - Configurable options via GUI
 
 ## Installation
