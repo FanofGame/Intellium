@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "intellium",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"name": "Intellium",
 	"description": "Intel GPU optimization and stability mod for Minecraft.",
 	"authors": [
@@ -55,7 +55,9 @@
 		"modmenu": {
 			"links": {
 				"Modrinth Page": "https://modrinth.com/mod/intellium"
-			}
+			},
+			"update_checker": true,
+			"badges": [ "management", "optimizatin", "technology" ]
 		}
 	}
 }
