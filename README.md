@@ -1,6 +1,6 @@
 # Intellium
 
-Intellium is an Intel optimization that 3x performance compared to vanilla performance.
+Intellium is an Intel optimization that 4x performance compared to vanilla performance.
 
 Exist on Modrinth link: https://modrinth.com/mod/intellium
 
