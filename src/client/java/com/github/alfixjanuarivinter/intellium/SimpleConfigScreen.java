@@ -33,6 +33,18 @@ public class SimpleConfigScreen extends Screen {
 
         y += 24;
 
+        // Toggle OpenGL Optimizations
+
+        this.addDrawableChild(ButtonWidget.builder(
+                Text.of("OpenGL Optimizations: " + (IntelliumConfig.enableOpenGLOptimizations ? "ON" : "OFF")),
+                button -> {
+                    IntelliumConfig.enableOpenGLOptimizations = !IntelliumConfig.enableOpenGLOptimizations;
+                    button.setMessage(Text.of("OpenGL Optimizations: " + (IntelliumConfig.enableOpenGLOptimizations ? "ON" : "OFF")));
+                }
+                ).dimensions(this.width / 2 - 100, y, 200, 20).build());
+
+        y += 24;
+
         // View Distance Slider
         this.addDrawableChild(new SliderWidget(this.width / 2 - 100, y, 200, 20, Text.of("View Distance: " + config.viewDistance), (config.viewDistance - 2) / 14.0f) {
             @Override

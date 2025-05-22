@@ -23,6 +23,7 @@ public class IntelliumConfig {
     public boolean enableIntelOptimizations = true;
     public int viewDistance = 6;
     public String particleSetting = "minimal";
+    public static boolean enableOpenGLOptimizations = true;
 
     private File configFile;
 
