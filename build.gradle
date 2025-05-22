@@ -8,7 +8,7 @@ def fabricVersion = project.property('fabric_version')
 def modmenuVersion = project.property('modmenu_version')
 def clothConfigVersion = project.property('cloth_config_version')
 
-version = "1.0.2"
+version = "1.0.3"
 group = "com.github.alfixjanuarivinter.intellium"
 
 base {
